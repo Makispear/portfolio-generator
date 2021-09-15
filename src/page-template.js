@@ -73,7 +73,7 @@ module.exports = templateData => {
     <link rel="stylesheet" href="style.css">
     <title>Portfolio Demo</title>
   </head>
-
+  <body>
   <header>
       <div class="container flex-row justify-space-between align-center py-3">
         <h1 class="page-title text-secondary bg-dark py-2 px-3">${header.name}</h1>
@@ -91,10 +91,6 @@ module.exports = templateData => {
   <footer class="container text-center py-3">
       <h3 class="text-dark">&copy; ${new Date().getFullYear()} by ${header.name}</h3>
   </footer>
-
-  <body>
-    <h1>${templateData.name}</h1>
-    <h2><a href="https://github.com/${templateData.github}">Github</a></h2>
   </body>
   </html>
   `;
