@@ -1,4 +1,7 @@
+// FILE SYSTEM 
 const fs = require('fs');
+
+// WRITE FILE PROMISE 
 const writeFile = fileContent => {
     return new Promise((resolve, reject) => {
       fs.writeFile('./dist/index.html', fileContent, err => {
@@ -14,24 +17,26 @@ const writeFile = fileContent => {
     });
   };
 
+// COPY FILE PROMISE 
 const copyFile = () => {
     return new Promise((resolve, reject) => {
-        fs.copyFile('./src/style.css', './dist', err => {
+        fs.copyFile('./src/style.css', 'dist/style.css', err => {
             if (err) {
                 reject(err);
-                return
+                return;
             }
             resolve({
                 ok: true,
-                message: 'File copied!'
+                message: 'File copied'
             });
         });
     });
 };
 
-// this is the shortcut for the one underneath it
+
 module.exports = { writeFile, copyFile };
-// module.exports = {
-//     writeFile: writeFile,
-//     copyFile: copyFile
-//   };
+// SHORTCUT FOR THE FOLLOWING:
+        // module.exports = {
+        //     writeFile: writeFile,
+        //     copyFile: copyFile
+        //   };
